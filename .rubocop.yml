@@ -1,0 +1,16 @@
+# frozen_string_literal: true
+AllCops:
+  TargetRubyVersion: 2.7
+  NewCops: enable
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/ClassLength:
+  Max: 125
+
+Metrics/BlockLength:
+  ExcludedMethods: ['describe', 'context']
+
+Documentation:
+  Enabled: false
