@@ -3,6 +3,8 @@
 require 'spec_helper'
 
 RSpec.describe Codebreaker::Entities::Processor do
+  subject(:processor) { described_class.new }
+
   context 'when testing #secret_code_proc method' do
     [
       ['1234', '1234', '++++'], ['1234', '4321', '----'], ['1231', '1234', '+++'],
@@ -42,7 +44,7 @@ RSpec.describe Codebreaker::Entities::Processor do
       ['1115', '1231', '+-'], ['1221', '2112', '----'], ['1231', '1111', '++']
     ].each do |value|
       it "tests that #{value.first} equals to #{value.last}" do
-        expect(subject.secret_code_proc(value[1], value[0])).to eq value.last
+        expect(processor.secret_code_proc(value[1], value[0])).to eq value.last
       end
     end
   end

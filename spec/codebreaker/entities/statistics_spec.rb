@@ -3,6 +3,8 @@
 require 'spec_helper'
 
 RSpec.describe Codebreaker::Entities::Statistics do
+  subject(:statistics) { described_class.new }
+
   context 'when testing #stats method' do
     let(:player_1) do
       {
@@ -71,7 +73,7 @@ RSpec.describe Codebreaker::Entities::Statistics do
     it 'returns stats' do
       list = [player_1, player_2, player_3, player_4, player_5, player_6]
       expected_value = [player_6, player_4, player_5, player_2, player_1, player_3]
-      expect(subject.stats(list)).to eq expected_value
+      expect(statistics.stats(list)).to eq expected_value
     end
   end
 end

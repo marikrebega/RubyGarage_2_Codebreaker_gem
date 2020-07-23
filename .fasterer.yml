@@ -3,7 +3,7 @@ speedups:
   module_eval: true
   shuffle_first_vs_sample: true
   for_loop_vs_each: true
-  each_with_index_vs_while: false
+  each_with_index_vs_while: true
   map_flatten_vs_flat_map: true
   reverse_each_vs_reverse_each: true
   select_first_vs_detect: true

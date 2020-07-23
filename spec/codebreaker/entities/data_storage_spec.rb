@@ -3,15 +3,9 @@
 require 'spec_helper'
 
 RSpec.describe Codebreaker::Entities::DataStorage do
+  subject(:data_storage) { described_class.new }
+
   let(:path) { 'database/data_test.yml' }
-
-  before do
-    File.new(path, 'w+')
-    stub_const('Codebreaker::Entities::DataStorage::FILE_NAME', 'database/data_test.yml')
-  end
-
-  after { File.delete(path) }
-
   let(:test_object) do
     {
       name: 'Denis',
@@ -23,18 +17,24 @@ RSpec.describe Codebreaker::Entities::DataStorage do
     }
   end
 
+  before do
+    File.new(path, 'w+')
+    stub_const('Codebreaker::Entities::DataStorage::FILE_NAME', 'database/data_test.yml')
+  end
+
+  after { File.delete(path) }
+
   context 'when testing #storage_exist?' do
     it 'checks existence of file' do
-      expect(File).to exist(Codebreaker::Entities::DataStorage::FILE_NAME)
-      expect(subject.storage_exist?).to eq true
+      expect(data_storage.storage_exist?).to eq true
     end
   end
 
   context 'when testing #save_game_result' do
     it 'saves result' do
-      subject.create
-      expect(subject).to receive(:save).with(subject.load.push(test_object))
-      subject.save_game_result(test_object)
+      data_storage.create
+      expect(data_storage).to receive(:save).with(data_storage.load.push(test_object))
+      data_storage.save_game_result(test_object)
     end
   end
 end

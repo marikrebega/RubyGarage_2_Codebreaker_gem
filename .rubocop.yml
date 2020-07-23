@@ -12,5 +12,13 @@ Metrics/ClassLength:
 Metrics/BlockLength:
   ExcludedMethods: ['describe', 'context']
 
+RSpec/MessageSpies:
+  EnforcedStyle: receive
+
+RSpec/SubjectStub:
+  Enabled: false
+
 Documentation:
   Enabled: false
+
+require: rubocop-rspec
