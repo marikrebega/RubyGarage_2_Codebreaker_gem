@@ -11,11 +11,7 @@ module Codebreaker
       end
 
       def load
-        File.file?(FILE_NAME) ? YAML.load_file(File.open(FILE_NAME, 'r')) : File.open(FILE_NAME, 'w') {}
-      end
-
-      def read_library(path = LIBRARY_NAME)
-        File.file?(path) ? YAML.load_file(File.open(path, 'r')) : File.open(path, 'w') {}
+        YAML.load(File.open(FILE_NAME), [Menu]) if storage_exist?
       end
 
       def save(object)
