@@ -130,13 +130,6 @@ RSpec.describe Codebreaker::Entities::Menu do
     end
   end
 
-  context 'when testing #render_stats' do
-    it 'returns list' do
-      expect(list).to receive(:each_with_index)
-      menu.send(:render_stats, list)
-    end
-  end
-
   context 'when testing #choice_menu_process' do
     %i[rules stats start].each do |command|
       it "returns ##{command}" do

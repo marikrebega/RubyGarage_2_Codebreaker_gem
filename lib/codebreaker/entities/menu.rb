@@ -151,9 +151,11 @@ module Codebreaker
       end
 
       def render_stats(list)
-        list.each_with_index do |key, index|
+        index = 0
+        while index < list.size
           puts "#{index + 1}: "
-          key.each { |param, value| puts "#{param}:#{value}" }
+          list[index].each { |param, value| puts "#{param}:#{value}" }
+          index += 1
         end
       end
     end

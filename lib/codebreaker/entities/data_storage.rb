@@ -11,7 +11,7 @@ module Codebreaker
       end
 
       def load
-        YAML.load(File.open(FILE_NAME), [Menu]) if storage_exist?
+        YAML.safe_load(File.open(FILE_NAME), [Symbol, Time]) if storage_exist?
       end
 
       def save(object)

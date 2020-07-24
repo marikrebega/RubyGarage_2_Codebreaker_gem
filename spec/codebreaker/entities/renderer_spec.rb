@@ -10,7 +10,7 @@ RSpec.describe Codebreaker::Entities::Renderer do
   context 'when #message method' do
     it 'return puts I18n' do
       msg = :start_message
-      expect(I18n).to receive(:t).with(msg, {})
+      expect(I18n).to receive(:t).with(msg)
       renderer.message(msg)
     end
   end
