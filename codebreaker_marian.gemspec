@@ -2,7 +2,7 @@
 
 lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require_relative 'lib/codebreaker/version'
+require_relative 'lib/codebreaker_marian/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'codebreaker_marian'
@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Marian Rebeha']
   spec.email         = ['marikrebega@gmail.com']
 
-  spec.summary       = 'Codebreaker app'
+  spec.summary       = 'CodebreakerMarian app'
   spec.description   = 'Logic game'
   spec.homepage      = 'https://github.com/marikrebega/RubyGarage_2_Codebreaker_gem'
 

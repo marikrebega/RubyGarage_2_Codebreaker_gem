@@ -10,7 +10,7 @@ require 'yaml'
 require_relative '../autoload'
 
 require 'bundler/setup'
-require 'codebreaker'
+require 'codebreaker_marian'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
