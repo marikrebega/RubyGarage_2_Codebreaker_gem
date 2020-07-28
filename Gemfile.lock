@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    codebreaker (0.1.5)
+    codebreaker_marian (0.1.5)
 
 GEM
   remote: https://rubygems.org/
@@ -15,7 +15,7 @@ GEM
     fasterer (0.8.3)
       colorize (~> 0.7)
       ruby_parser (>= 3.14.1)
-    i18n (1.8.4)
+    i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     method_source (1.0.0)
     parallel (1.19.2)
@@ -71,7 +71,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 2.1.4)
-  codebreaker!
+  codebreaker_marian!
   fasterer
   i18n
   pry
