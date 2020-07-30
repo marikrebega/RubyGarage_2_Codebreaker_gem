@@ -26,6 +26,10 @@ module Codebreaker
         @statistics = Statistics.new
       end
 
+      def tests
+        puts '11111111111111111111111111111111111111111'
+      end
+
       def game_menu
         renderer.start_message
 
