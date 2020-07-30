@@ -3,9 +3,9 @@
 module Codebreaker
   module Entities
     class Menu
-      include Modules::Validator
-      attr_reader :storage, :renderer, :game, :guess
-
+      #include Modules::Validator
+      #attr_reader :storage, :renderer, :game, :guess
+=begin
       COMMANDS = {
         start: 'start',
         exit: 'exit',
@@ -16,20 +16,21 @@ module Codebreaker
         yes: 'yes'
       }.freeze
       HINT_COMMAND = 'hint'
+=end
       MIN_SIZE_VALUE = 3
       MAX_SIZE_VALUE = 20
-
+=begin
       def initialize
         @storage = DataStorage.new
         @renderer = Renderer.new
         @game = Game.new
         @statistics = Statistics.new
       end
-
+=end
       def tests
         puts '11111111111111111111111111111111111111111'
       end
-
+=begin
       def game_menu
         renderer.start_message
 
@@ -165,3 +166,4 @@ module Codebreaker
     end
   end
 end
+=end
