@@ -35,6 +35,7 @@ module Codebreaker
 
       def start_process(command)
         @process.secret_code_proc(code.join, command)
+        decrease_attempts!
       end
 
       def win?(guess)

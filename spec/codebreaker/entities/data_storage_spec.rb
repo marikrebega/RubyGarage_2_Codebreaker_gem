@@ -5,7 +5,7 @@ require 'spec_helper'
 RSpec.describe Codebreaker::Entities::DataStorage do
   subject(:data_storage) { described_class.new }
 
-  let(:path) { 'database/data_test.yml' }
+  let(:path) { 'data_test.yml' }
   let(:test_object) do
     {
       name: 'Denis',
@@ -19,7 +19,7 @@ RSpec.describe Codebreaker::Entities::DataStorage do
 
   before do
     File.new(path, 'w+')
-    stub_const('Codebreaker::Entities::DataStorage::FILE_NAME', 'database/data_test.yml')
+    stub_const('Codebreaker::Entities::DataStorage::FILE_NAME', 'data_test.yml')
   end
 
   after { File.delete(path) }

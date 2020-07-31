@@ -38,15 +38,6 @@ RSpec.describe Codebreaker::Entities::Game do
     end
   end
 
-  context 'when #start_process method' do
-    it do
-      process = game.instance_variable_get(:@process)
-      game.instance_variable_set(:@code, win_code)
-      expect(process).to receive(:secret_code_proc).with(win_code.join, start_code)
-      game.start_process(start_code)
-    end
-  end
-
   context 'when used #decrease_attempts! method' do
     it 'decreases attempts by one when used' do
       game.instance_variable_set(:@attempts, 3)
