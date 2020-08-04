@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
-
 RSpec.describe Codebreaker::Entities::Statistics do
   subject(:statistics) { described_class.new }
 

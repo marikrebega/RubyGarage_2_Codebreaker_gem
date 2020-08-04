@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
-
 RSpec.describe Codebreaker::Entities::DataStorage do
   subject(:data_storage) { described_class.new }
 

@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
-
 RSpec.describe Codebreaker::Entities::Game do
   subject(:game) { described_class.new }
 
-  let(:lose_result) { '-+++' }
+  let(:lose_result) { UNMATCHED_DIGIT_CHAR + MATCHED_DIGIT_CHAR * 3 }
   let(:start_code) { '1111' }
   let(:hints_array) { [1, 2] }
-  let(:valid_name) { 'a' * rand(3..20) }
+  let(:min) { Codebreaker::Entities::User::USERNAME_CONSTRAINTS[:min] }
+  let(:max) { Codebreaker::Entities::User::USERNAME_CONSTRAINTS[:max] }
+  let(:valid_name) { 'a' * rand(min..max) }
   let(:code) { [1, 1, 1, 1] }
   let(:win_code) do
     Array.new(Codebreaker::Entities::Game::DIGITS_COUNT,
