@@ -5,7 +5,7 @@ module Codebreaker
     class Statistics
       def stats(list)
         difficulties = list.group_by { |score| score[:difficulty] }
-        %i[hell medium easy].reduce([]) do |sorted_difficulties, difficulty_name|
+        Game::DIFFICULTIES.keys.reduce([]) do |sorted_difficulties, difficulty_name|
           if difficulties[difficulty_name]
             sorted_difficulties + stats_sort(difficulties[difficulty_name])
           else
