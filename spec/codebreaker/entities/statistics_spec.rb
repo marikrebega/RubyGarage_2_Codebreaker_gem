@@ -72,7 +72,7 @@ RSpec.describe Codebreaker::Entities::Statistics do
 
     it 'returns stats' do
       list = [player_1, player_2, player_3, player_4, player_5, player_6]
-      expected_value = [player_6, player_4, player_5, player_2, player_1, player_3]
+      expected_value = [player_5, player_4, player_6, player_3, player_1, player_2]
       expect(statistics.stats(list)).to eq expected_value
     end
   end

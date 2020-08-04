@@ -46,7 +46,7 @@ RSpec.describe Codebreaker::Entities::User do
       let(:user_name) { 1 }
 
       it 'exсeption "unexpected_type"' do
-        expect { user }.to raise_error(described_class::DataValidError, 'unexpected_type')
+        expect { user }.to raise_error(TypeError, 'unexpected_type')
       end
     end
 
@@ -54,7 +54,7 @@ RSpec.describe Codebreaker::Entities::User do
       let(:user_name) { random_str_by_range_length(0, standard_user_constraints[:min] - 1) }
 
       it 'exсeption "unexpected_length"' do
-        expect { user }.to raise_error(described_class::DataValidError, 'unexpected_length')
+        expect { user }.to raise_error(ArgumentError, 'unexpected_length')
       end
     end
 
@@ -62,7 +62,7 @@ RSpec.describe Codebreaker::Entities::User do
       let(:user_name) { random_str_by_range_length(standard_user_constraints[:max] + 1, 1000) }
 
       it 'exсeption "unexpected_length"' do
-        expect { user }.to raise_error(described_class::DataValidError, 'unexpected_length')
+        expect { user }.to raise_error(ArgumentError, 'unexpected_length')
       end
     end
   end
