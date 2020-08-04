@@ -17,7 +17,7 @@ module Codebreaker
       private
 
       def stats_sort(scores)
-        scores.sort_by! { |score| [score[:attempts_used], score[:hints_used]] }.reverse
+        scores.sort_by! { |score| [score[:attempts_used], score[:hints_used]] }
       end
     end
   end
