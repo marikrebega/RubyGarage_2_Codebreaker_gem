@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 AllCops:
-  TargetRubyVersion: 2.7
+  TargetRubyVersion: 2.7.1
   NewCops: enable
 
 Metrics/LineLength:

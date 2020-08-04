@@ -8,6 +8,8 @@ end
 require 'rspec'
 require 'yaml'
 require_relative '../autoload'
+require_relative 'codebreaker/helpers/values_for_testing'
+require_relative 'codebreaker/helpers/common_helpers'
 
 require 'bundler/setup'
 require 'codebreaker_marian'
