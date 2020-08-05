@@ -43,7 +43,7 @@ module Codebreaker
       end
 
       def decrease_attempts!
-        @attempts -= 1
+        @attempts -= 1 if @attempts != 0
       end
 
       def to_h(name)
