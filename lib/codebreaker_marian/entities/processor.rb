@@ -5,7 +5,7 @@ module Codebreaker
     class Processor
       MATCHED_DIGIT_CHAR = '+'
       UNMATCHED_DIGIT_CHAR = '-'
-      WRONG_DIGIT_CHAR = ''
+      WRONG_DIGIT_CHAR = ' '
 
       attr_reader :guess, :code, :result
 

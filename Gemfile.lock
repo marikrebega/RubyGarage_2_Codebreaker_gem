@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    codebreaker_marian (0.3.1)
+    codebreaker_marian (0.3.2)
 
 GEM
   remote: https://rubygems.org/
