@@ -3,7 +3,8 @@
 RSpec.describe Codebreaker::Entities::DataStorage do
   subject(:data_storage) { described_class.new }
 
-  let(:path) { 'data_test.yml' }
+  let(:file_path) { 'database' }
+  let(:file_name) { 'data_test.yml' }
   let(:test_object) do
     {
       name: 'Denis',
@@ -16,11 +17,16 @@ RSpec.describe Codebreaker::Entities::DataStorage do
   end
 
   before do
-    File.new(path, 'w+')
+    Dir.mkdir(file_path) unless Dir.exist?(file_path)
+    File.new(File.join(file_path, file_name), 'w+')
     stub_const('Codebreaker::Entities::DataStorage::FILE_NAME', 'data_test.yml')
+    stub_const('Codebreaker::Entities::DataStorage::FILE_DIRECTORY', 'database')
   end
 
-  after { File.delete(path) }
+  after do
+    File.delete(File.join(file_path, file_name))
+    Dir.delete(file_path)
+  end
 
   context 'when testing #storage_exist?' do
     it 'checks existence of file' do
