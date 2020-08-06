@@ -1,7 +1,13 @@
 # frozen_string_literal: true
 
 RSpec.describe Codebreaker::Entities::Statistics do
+  include ValuesForTesting
+
   subject(:statistics) { described_class.new }
+
+  before do
+    stub_const('Codebreaker::Entities::Game::DIFFICULTIES', standard_difficulty_values)
+  end
 
   context 'when testing #stats method' do
     let(:player_1) do

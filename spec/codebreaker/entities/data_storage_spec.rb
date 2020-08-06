@@ -1,10 +1,12 @@
 # frozen_string_literal: true
 
 RSpec.describe Codebreaker::Entities::DataStorage do
+  include ValuesForTesting
+
   subject(:data_storage) { described_class.new }
 
   let(:file_path) { 'database' }
-  let(:file_name) { 'data_test.yml' }
+  let(:file_name) { 'data.yml' }
   let(:test_object) do
     {
       name: 'Denis',
@@ -19,8 +21,9 @@ RSpec.describe Codebreaker::Entities::DataStorage do
   before do
     Dir.mkdir(file_path) unless Dir.exist?(file_path)
     File.new(File.join(file_path, file_name), 'w+')
-    stub_const('Codebreaker::Entities::DataStorage::FILE_NAME', 'data_test.yml')
-    stub_const('Codebreaker::Entities::DataStorage::FILE_DIRECTORY', 'database')
+    stub_const('Codebreaker::Entities::Game::DIFFICULTIES', standard_difficulty_values)
+    stub_const('Codebreaker::Entities::DataStorage::FILE_NAME', standard_file_name)
+    stub_const('Codebreaker::Entities::DataStorage::FILE_DIRECTORY', standard_directory_name)
   end
 
   after do

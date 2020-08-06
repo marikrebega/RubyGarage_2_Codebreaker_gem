@@ -1,10 +1,12 @@
 # frozen_string_literal: true
 
 RSpec.describe Codebreaker::Entities::Game do
+  include ValuesForTesting
+
   subject(:game) { described_class.new }
 
   let(:lose_result) { UNMATCHED_DIGIT_CHAR + MATCHED_DIGIT_CHAR * 3 }
-  let(:start_code) { '1111' }
+  let(:start_code) { '1' * Codebreaker::Entities::Game::DIGITS_COUNT }
   let(:hints_array) { [1, 2] }
   let(:min) { Codebreaker::Entities::User::USERNAME_CONSTRAINTS[:min] }
   let(:max) { Codebreaker::Entities::User::USERNAME_CONSTRAINTS[:max] }
@@ -13,6 +15,13 @@ RSpec.describe Codebreaker::Entities::Game do
   let(:win_code) do
     Array.new(Codebreaker::Entities::Game::DIGITS_COUNT,
               Codebreaker::Entities::Processor::MATCHED_DIGIT_CHAR)
+  end
+
+  before do
+    stub_const('Codebreaker::Entities::User::USERNAME_CONSTRAINTS', standard_user_constraints)
+    stub_const('Codebreaker::Entities::Game::DIFFICULTIES', standard_difficulty_values)
+    stub_const('Codebreaker::Entities::Game::DIGITS_COUNT', standard_game_numbers_count)
+    stub_const('Codebreaker::Entities::Processor::MATCHED_DIGIT_CHAR', standart_matched_digit_char)
   end
 
   context 'when testing #take_a_hint! method' do
