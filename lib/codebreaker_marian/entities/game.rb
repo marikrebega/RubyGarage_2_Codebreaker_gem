@@ -43,7 +43,7 @@ module Codebreaker
       end
 
       def decrease_attempts!
-        raise StandardError, 'attempts equal 0' unless @attempts != 0
+        raise StandardError, 'attempts equal 0' if @attempts.zero?
 
         @attempts -= 1
       end
