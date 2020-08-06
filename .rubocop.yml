@@ -1,0 +1,21 @@
+# frozen_string_literal: true
+AllCops:
+  TargetRubyVersion: 2.7.1
+  NewCops: enable
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/BlockLength:
+  ExcludedMethods: ['describe', 'context']
+
+RSpec/MessageSpies:
+  EnforcedStyle: receive
+
+RSpec/SubjectStub:
+  Enabled: false
+
+Documentation:
+  Enabled: false
+
+require: rubocop-rspec

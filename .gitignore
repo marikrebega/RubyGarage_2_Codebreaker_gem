@@ -1,11 +1,7 @@
-/.bundle/
-/.yardoc
-/_yardoc/
-/coverage/
-/doc/
+/coverage
+/database/data.yml
+/database/data_test.yml
 /pkg/
-/spec/reports/
-/tmp/
 /.history
 
 # rspec failure tracking
