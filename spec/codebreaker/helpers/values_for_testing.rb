@@ -10,24 +10,8 @@ module ValuesForTesting
     'database'
   end
 
-  def standard_menu_commands
-    { start: 'start', exit: 'exit', rules: 'rules', stats: 'stats' }
-  end
-
-  def standard_choose_commands
-    { yes: 'yes', no: 'no' }
-  end
-
   def standart_matched_digit_char
     '+'
-  end
-
-  def standart_unmatched_digit_char
-    '-'
-  end
-
-  def standart_wrong_digit_char
-    ' '
   end
 
   def standard_user_constraints
@@ -40,10 +24,6 @@ module ValuesForTesting
       medium: { attempts: 10, hints: 1 },
       hell: { attempts: 5, hints: 1 }
     }
-  end
-
-  def standard_game_numbers_range
-    1..6
   end
 
   def standard_game_numbers_count

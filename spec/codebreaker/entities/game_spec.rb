@@ -12,10 +12,6 @@ RSpec.describe Codebreaker::Entities::Game do
   let(:max) { Codebreaker::Entities::User::USERNAME_CONSTRAINTS[:max] }
   let(:valid_name) { 'a' * rand(min..max) }
   let(:code) { [1, 1, 1, 1] }
-  let(:win_code) do
-    Array.new(Codebreaker::Entities::Game::DIGITS_COUNT,
-              Codebreaker::Entities::Processor::MATCHED_DIGIT_CHAR)
-  end
 
   before do
     stub_const('Codebreaker::Entities::User::USERNAME_CONSTRAINTS', standard_user_constraints)

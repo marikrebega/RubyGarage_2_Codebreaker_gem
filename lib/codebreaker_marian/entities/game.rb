@@ -43,7 +43,9 @@ module Codebreaker
       end
 
       def decrease_attempts!
-        @attempts -= 1 if @attempts != 0
+        raise StandardError, 'attempts equal 0' unless @attempts != 0
+
+        @attempts -= 1
       end
 
       def to_h(name)
